@@ -1,0 +1,205 @@
+html{
+	background-color: maroon;
+}
+
+body{
+	background-image: url(images/background/flower.jpg);
+	color: navy;
+	max-width: 1135px;
+	margin: 30px auto 20px auto;
+}
+
+#name{
+	text-align: center;
+	font-weight: bolder;
+	font-family: Papyrus, fantasy;
+	font-size: 68px;
+	line-height: 100px;
+	margin: 7px;
+}
+
+div.homescreen{
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.logopics{
+	border-radius: 50%;
+}
+
+a{
+	text-decoration: none;
+	color: navy;
+}
+
+a:hover{
+	color: maroon;
+}
+
+a:visited{
+	color: black;
+}
+
+
+
+#Contact{
+	margin: auto;
+	text-align: center;
+}
+
+h2{
+	font-family: "Lucida Bright",Georgia,serif;
+}
+
+h3{
+	margin-bottom: -10px;
+}
+
+.directory{
+	text-align: center;
+	font-size: 40px;
+}
+.menupics{
+	border-radius: 20px;
+	height: 200px;
+	width: 200px;
+	background-color: maroon;
+	font-size: 22px;
+	line-height: 0px;
+	text-align: center;
+}
+
+img.menupics{
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	height: 150px;
+}
+
+		
+.menuoptions {
+	display: inline-block;
+	width: 79%;
+	border-left: 1px solid white;
+	padding-left: 6px;
+}
+
+ul{
+	padding: 20px;
+	list-style-type: none;
+}
+
+div.menupics{
+	margin: 4px;
+	float: left;
+}
+p{
+	clear:left;
+}
+
+ video {
+	 box-sizing: border-box;
+     width: 100%;
+}
+
+#About{
+		border: 2px solid maroon;
+		background-color: brown;
+		text-align: center;
+}
+
+nav.menuoptions {
+	font-size: 30px;
+}
+
+@media screen and (min-width: 600px) {
+	.video {
+		width: 55%;
+		display: block;
+		padding: 10px;
+		margin: 0 auto;
+	}
+
+	#About{
+		margin: auto;
+		width: 760px;
+		font-size: 25px;
+	}
+
+	nav.menuoptions {
+		float:left;
+		vertical-align: top;
+		width: 20%;
+		border: none;
+	}
+}
+
+header, footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color:brown;
+	left: 0;
+}
+
+header {
+	font-size: 25px;
+    top: 0;
+	border-bottom: 1px solid maroon;
+}
+
+footer {
+    bottom: 0;
+    border-top: 1px solid maroon;
+}
+
+form > label {
+	display: block;
+	margin: 5px;
+	font-size: 25px;
+}
+
+form{
+	text-align: left;
+    margin: 10px;
+}
+
+input[type="text"] {
+    margin-left: 12px;
+}
+
+#About p::first-letter {
+	font-size: 50px;
+    color: navy;
+    text-shadow: 4px 4px 4px black;
+}
+
+label textarea {
+	font-size: 15px;
+    margin-left: 14px;
+    position: absolute;
+}
+
+.verticleLine{
+	 border-left: 1px solid black;
+	 margin-bottom: 50px
+}
+
+div.feedback, div.hours{
+	display: inline-block;
+}
+
+caption {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+thead {
+    font-size: 21px;
+}
+tbody th, tbody td, tfoot th, tfoot td {
+	text-align: right;
+}
+
+td {
+    font-size: 30px;
+}
