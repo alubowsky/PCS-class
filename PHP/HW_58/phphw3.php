@@ -1,34 +1,40 @@
 <?php
+    $name = "";
+    $email = "";
+    $age = "";
+    $rating = "";
     if(!empty($_POST['name'])) {
         $name= $_POST['name'];
     } else {
-        exit("Name is a required field");
+        $errors [] = "Name is a required field";
     }
 
     if(!empty($_POST['email'])) {
         $email= $_POST['email'];
     } else {
-        exit("Email is a required field");
+         $errors [] = "Email is a required field";
     }
 
-    if(!empty($_POST['age'])) {
+    if(isset($_POST['age'])) {
         if(! is_numeric($_POST['age'])){
-            exit("Age must be a number");
+             $errors [] = "Age must be a number";
         }
         if(($_POST['age'] < 0) || ($_POST['age'] > 120)){
-            exit("Age must be greater than 0 and less then or equal to 120");
+             $errors [] = "Age must be greater than 0 and less then or equal to 120";
         }
          $age= $_POST['age'];
     } else {
-        exit("Age is a required field");
+         $errors [] = "Age is a required field";
     }
 
-    if(! is_numeric($_POST['rating'])){
-        exit("Rating must be a number");
-    } else if(($_POST['rating'] < 1) || ($_POST['rating'] > 10)){
-        exit("Rating must be greater or equal to 1 and less then or eqaul to 10");
-    } else {
-        $rating= $_POST['rating'];
+    if(isset($_POST['rating'])){
+          if(! is_numeric($_POST['rating'])){
+            $errors [] = "Rating must be a number";
+        } else if(($_POST['rating'] < 1) || ($_POST['rating'] > 10)){
+            $errors [] = "Rating must be greater or equal to 1 and less then or eqaul to 10";
+        } else {
+            $rating= $_POST['rating'];
+        }
     }
   
 ?>
@@ -51,6 +57,16 @@
                 <h1>You Submitted</h1>
         </div>
 
+        <?php if(!empty($errors)) : ?>
+            <div class = "alert alert-danger">
+                <ul>
+                    <?php foreach($errors as $error) 
+                        echo "<li>$error</li>" 
+                    ?>
+                </ul>
+            </div>
+        <?php endif ?>
+        
         <div class="form-horizontal">
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
