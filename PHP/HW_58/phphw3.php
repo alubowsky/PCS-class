@@ -28,7 +28,7 @@
     } else if(($_POST['rating'] < 1) || ($_POST['rating'] > 10)){
         exit("Rating must be greater or equal to 1 and less then or eqaul to 10");
     } else {
-        $age= $_POST['rating'];
+        $rating= $_POST['rating'];
     }
   
 ?>
@@ -67,13 +67,13 @@
             <div class="form-group">
                 <label for="age" class="col-sm-2 control-label">Age</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="age"  name ="age" value=<?= $age?> min="0" max="120" readonly>
+                    <input type="number" class="form-control" id="age"  name ="age" min="0" max="120" readonly value=<?= $age?>>
                 </div>
             </div>
             <div class="form-group">
                 <label for="rating" class="col-sm-2 control-label">Rating</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="rating"  name ="rating" value=<?= $rating?> min= "1" max "10" readonly>
+                    <input type="number" class="form-control" id="rating"  name ="rating" min= "1" max ="10" disabled value=<?= $rating?>>
                 </div>
             </div>
         </div>
