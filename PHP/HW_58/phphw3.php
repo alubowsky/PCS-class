@@ -71,25 +71,25 @@
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name = "name" id="name" readonly value=<?= $name?>>
+                    <input type="text" class="form-control" name = "name" id="name" readonly value="<?= $name?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="email"  name ="email" readonly value=<?= $email?>>
+                <input type="email" class="form-control" id="email"  name ="email" readonly value="<?= $email?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="age" class="col-sm-2 control-label">Age</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="age"  name ="age" min="0" max="120" readonly value=<?= $age?>>
+                    <input type="number" class="form-control" id="age"  name ="age" min="0" max="120" readonly value="<?= $age?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="rating" class="col-sm-2 control-label">Rating</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="rating"  name ="rating" min= "1" max ="10" disabled value=<?= $rating?>>
+                    <input type="number" class="form-control" id="rating"  name ="rating" min= "1" max ="10" disabled value="<?= $rating?>">
                 </div>
             </div>
         </div>

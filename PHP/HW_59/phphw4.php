@@ -1,40 +1,44 @@
 <?php
-    $name = "";
-    $email = "";
-    $age = "";
-    $rating = "";
-    if(!empty($_POST['name'])) {
-        $name= $_POST['name'];
-    } else {
-        $errors [] = "Name is a required field";
-    }
+    $name  = "";
+    $yearsCoding = "";
+    $favLang ="";
+    $langArr = [
+        "Java",
+        "PHP",
+        "SQL",
+        "Javascript",
+        "Ruby",
+        "HTML",
+        "c#"
+    ];
 
-    if(!empty($_POST['email'])) {
-        $email= $_POST['email'];
-    } else {
-         $errors [] = "Email is a required field";
-    }
-
-    if(isset($_POST['age'])) {
-        if(! is_numeric($_POST['age'])){
-             $errors [] = "Age must be a number";
+    if($_SERVER['REQUEST_METHOD'] === "POST") {
+        if(!empty($_POST['name'])) {
+                $name = $_POST['name'];
+        } else {
+            $errors[] = "Name is a required field";
         }
-        if(($_POST['age'] < 0) || ($_POST['age'] > 120)){
-             $errors [] = "Age must be greater than 0 and less then or equal to 120";
-        }
-         $age= $_POST['age'];
-    } else {
-         $errors [] = "Age is a required field";
-    }
 
-    if(! is_numeric($_POST['rating'])){
-         $errors [] = "Rating must be a number";
-    } else if(($_POST['rating'] < 1) || ($_POST['rating'] > 10)){
-         $errors [] = "Rating must be greater or equal to 1 and less then or eqaul to 10";
-    } else {
-        $rating= $_POST['rating'];
+        if(!empty($_POST['yearsCoding'])) {
+            if((! is_numeric ($_POST['yearsCoding'])) || ($_POST['yearsCoding'] < 0) || ($_POST['yearsCoding'] > 50)){
+                $errors[] = "Years spent coding must be a number between 0 and 50";
+            }
+             $yearsCoding = $_POST['yearsCoding'];  
+        } else {
+            $errors[] = "Years spent coding is a required field";
+        }
+
+        if(!empty($_POST['favLang'])) {
+            if(in_array($_POST['favLang'], $langArr)){
+                $favLang = $_POST['favLang']; 
+            } else {
+                    $errors[] = "Favorite programming language must be Java, PHP, SQL, Javascript, Ruby, HTML, or c#"; 
+            }      
+        } else {
+            $errors[] = "Please choose a favorite language";
+        }
     }
-  
+    
 ?>
 
 <!DOCTYPE html>
@@ -52,44 +56,47 @@
 <body>
     <div class="container">
         <div class="jumbotron text-center">
-                <h1>You Submitted</h1>
+                <h1>Form</h1>
         </div>
 
-        <?php if(!empty($errors)) : ?>
+        <?php if(isset($errors)) : ?>
             <div class = "alert alert-danger">
                 <ul>
-                    <?php foreach($errors as $error) 
-                        echo "<li>$error<li>" ?>
+                    <?php foreach($errors as $error) echo "<li>$error</li>" ?>
                 </ul>
             </div>
         <?php endif ?>
-        
-        <div class="form-horizontal">
+
+        <form class="form-horizontal" method="post">
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name = "name" id="name" readonly value=<?= $name?>>
+                    <input type="text" class="form-control" name = "name" id="name" placeholder="Name" xrequired value ="<?=$name?>">
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">Email</label>
+                <label for="yearsCoding" class="col-sm-2 control-label">How many years have you been coding?</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="email"  name ="email" readonly value=<?= $email?>>
+                <input type="xnumber" class="form-control" id="yearsCoding" xmin= "0" xmax = "50"  name ="yearsCoding" placeholder="years coding" value ="<?=$yearsCoding?>" xrequired>
                 </div>
             </div>
             <div class="form-group">
-                <label for="age" class="col-sm-2 control-label">Age</label>
+                <label for="favLang" class="col-sm-2 control-label">Favorite programing language</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="age"  name ="age" min="0" max="120" readonly value=<?= $age?>>
+                    <input type="text" class="form-control" id="favLang"  name ="favLang" placeholder="programing language"  value ="<?=$favLang?>" xrequired>
                 </div>
             </div>
+            <?php if((empty($errors))&&(isset($_POST['submit']))) : ?>
+                <div>
+                    <div class="col-sm-10 well">Thanks for submiting your data</div>
+                </div>
+            <?php endif ?>
             <div class="form-group">
-                <label for="rating" class="col-sm-2 control-label">Rating</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" id="rating"  name ="rating" min= "1" max ="10" disabled value=<?= $rating?>>
+                <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" class="btn btn-primary" name = "submit" value= "submit">
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
