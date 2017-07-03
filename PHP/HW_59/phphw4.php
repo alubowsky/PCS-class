@@ -71,19 +71,19 @@
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name = "name" id="name" placeholder="Name" xrequired value ="<?=$name?>">
+                    <input type="text" class="form-control" name = "name" id="name" placeholder="Name" required value ="<?=$name?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="yearsCoding" class="col-sm-2 control-label">How many years have you been coding?</label>
                 <div class="col-sm-10">
-                <input type="xnumber" class="form-control" id="yearsCoding" xmin= "0" xmax = "50"  name ="yearsCoding" placeholder="years coding" value ="<?=$yearsCoding?>" xrequired>
+                <input type="number" class="form-control" id="yearsCoding" min= "0" max = "50"  name ="yearsCoding" placeholder="years coding" value ="<?=$yearsCoding?>" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="favLang" class="col-sm-2 control-label">Favorite programing language</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="favLang"  name ="favLang" placeholder="programing language"  value ="<?=$favLang?>" xrequired>
+                    <input type="text" class="form-control" id="favLang"  name ="favLang" placeholder="programing language"  value ="<?=$favLang?>" required>
                 </div>
             </div>
             <?php if((empty($errors))&&(isset($_POST['submit']))) : ?>
