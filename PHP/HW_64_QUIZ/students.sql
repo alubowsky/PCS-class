@@ -1,0 +1,2 @@
+CREATE TABLE `pcs`.`students` ( `id` INT NOT NULL AUTO_INCREMENT ,  `name` VARCHAR(30) NOT NULL ,  `grade` INT NOT NULL ,    PRIMARY KEY  (`id`)) ENGINE = InnoDB;
+INSERT INTO `students` (`id`, `name`, `grade`) VALUES ('1', 'bob', '75'), ('2', 'bob', '78'), ('3', 'joe', '88'), ('4', 'joe', '86'), ('6', 'sam', '99'), ('7', 'sam', '93');
