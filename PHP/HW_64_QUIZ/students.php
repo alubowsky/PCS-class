@@ -6,11 +6,14 @@
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
-        $query = "SELECT name, grade FROM students LIMIT 20";
+        $query = "SELECT name FROM students GROUP BY name";
         $results = $db->query($query);
-        $students = $results->fetchAll();
-        print_r($students);
+        $students = $results->fetchAll(PDO::FETCH_ASSOC);
         $results->closeCursor();
+
+        $query2 = "SELECT name, grade FROM students";
+        $results2 = $db->query($query2);
+        $grades = $results2->fetchAll(PDO::FETCH_ASSOC);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 if(empty($_POST['student'])){
@@ -65,7 +68,12 @@
                 <?php foreach($students as $student) :?>
                 <tr>
                     <td><?= $student['name'] ?></td>
-                    <td><?= number_format($student['grade'], 2)  ?></td>
+                    <?php foreach($grades as $grade) {
+                        if($student['name']===$grade['name']){
+                            echo "<td> {$grade['grade']} </td>";
+                        }
+                    }
+                 ?>  
                 </tr>
                 <?php endforeach ?>
             </tbody>
@@ -77,8 +85,7 @@
                 <div class="col-sm-10">
                     <select class="form-control" id="student" name="student">
                         <?php foreach($students as $student) :?>
-                        <option value="<?= $student['name'] ?>">
-                        <?= $student["name"] ?></option>
+                        <option><?= $student["name"] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -89,6 +96,16 @@
                 </div>
             </div>
         </form>
+        <?php if(isset($success)) : ?>
+            <h2 class="text-center alert alert-success">
+                <?=$success?>
+            </h2>
+        <?php endif ?>
+        <?php if(!empty($error)) : ?>
+        <h2 class="text-center alert alert-danger">
+            <?= $error ?>
+        </h2>
+        <?php endif ?>
       </div>
     </body>
 </html>
