@@ -8,7 +8,7 @@
         return $seferOpt;
     }
 ?>
-        <form class="form-inline" action="prices.php">
+        <form class="form-inline " action="prices.php">
             <div class="form-group">
                  <label>Select a Sefer:
                     <select name="sefer">
