@@ -13,7 +13,7 @@ switch($action) {
         $home = new Page("Home Page", "this is the Home Page");
         exit;
     case 'page2':   
-        $page2 = new Page("Page 2", "this is Page 2");
+        $page2 = new Page("Page 2", 'this is page 2');
         exit;
     case 'page3':   
         $page3 = new Page("Page 3", "this is Page 3");
@@ -24,6 +24,4 @@ switch($action) {
         exit;
 }
 
-?>
-$p = new Page("Page 1", "Page one stuff");
 ?>
