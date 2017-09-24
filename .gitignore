@@ -35,3 +35,4 @@ PHP/HW_73_Test/views/loginView.php
 PHP/HW_73_Test/views/pager.php
 PHP/HW_73_Test/views/registerView.php
 PHP/HW_73_Test/views/top.php
+PHP/HW_73_Test/models/cart.php
