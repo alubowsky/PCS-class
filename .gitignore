@@ -36,3 +36,9 @@ PHP/HW_73_Test/views/pager.php
 PHP/HW_73_Test/views/registerView.php
 PHP/HW_73_Test/views/top.php
 PHP/HW_73_Test/models/cart.php
+PHP/HW_73_Test/index (2).php
+PHP/HW_73_Test/viewCartModel.php
+PHP/HW_73_Test/models/addToCart.php
+PHP/HW_73_Test/models/clear.php
+PHP/HW_73_Test/models/remove.php
+PHP/HW_73_Test/views/Cartview.php
