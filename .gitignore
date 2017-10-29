@@ -42,3 +42,5 @@ PHP/HW_73_Test/models/addToCart.php
 PHP/HW_73_Test/models/clear.php
 PHP/HW_73_Test/models/remove.php
 PHP/HW_73_Test/views/Cartview.php
+PHP/HW_73_Test/controllers/viewCart.php
+PHP/HW_73_Test/models/viewCartModel.php
