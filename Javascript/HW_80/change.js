@@ -8,17 +8,17 @@
     var stopString = 'Stop';
 
     function changeBgColor() {
-        var r = Math.random() * 256;
-        var g = Math.random() * 256;
-        var b = Math.random() * 256;
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
         var thergb = "rgb(" + r + "," + g + "," + b + ")"; 
         document.body.style.backgroundColor = thergb;
     }
 
     function changeColor() {
-        var r = Math.random() * 256;
-        var g = Math.random() * 256;
-        var b = Math.random() * 256;
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
         var thergb = "rgb(" + r + "," + g + "," + b + ")"; 
         document.body.style.color = thergb;
     }
