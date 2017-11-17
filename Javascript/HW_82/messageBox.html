@@ -44,25 +44,9 @@
             let message = document.getElementById('messageData');
             let modal = document.getElementById('modal');
             let popMsg = document.getElementById('addMessage');
-            let isModal = false;
+            
             popMsg.addEventListener("submit", function(event){
-                if(modal.checked){
-                    modalDiv = document.createElement('div');
-                    document.body.appendChild(modalDiv);
-                    modalDiv.style.width = '100%';
-                    modalDiv.style.height = '100%';
-                    modalDiv.style.position = 'absolute';
-                    modalDiv.style.backgroundColor = 'gray';
-                    modalDiv.style.opacity = '0.5';
-                    modalDiv.style.top = '0';
-                    
-                    isModal = true
-                    pcs.messagebox.show(message.value, isModal, modalDiv);
-                }
-                else{
-                    pcs.messagebox.show(message.value);
-                }
-                
+                pcs.messagebox.show(message.value, modal.checked);
                 event.preventDefault();
                 popMsg.reset();
             })

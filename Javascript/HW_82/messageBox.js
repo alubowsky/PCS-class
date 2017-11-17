@@ -8,7 +8,7 @@ pcs.messagebox = (function (module) {
         return document.createElement(type);
     };
 
-    module.show = function(msg, isModal, modalDiv) {
+    module.show = function(msg, isModal) {
         howMany ++;
 
         if(howMany > 0){
@@ -47,6 +47,14 @@ pcs.messagebox = (function (module) {
         }
 
         if(isModal){
+            var modalDiv = document.createElement('div');
+            document.body.appendChild(modalDiv);
+            modalDiv.style.width = '100%';
+            modalDiv.style.height = '100%';
+            modalDiv.style.position = 'absolute';
+            modalDiv.style.backgroundColor = 'gray';
+            modalDiv.style.opacity = '0.5';
+            modalDiv.style.top = '0';
             div.style.zIndex = offset + 1;
         }
 
