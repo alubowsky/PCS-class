@@ -1,0 +1,44 @@
+{
+    "chocolateChipCookies":{
+        "name" : "Chocolate Chip Cookies",
+        "url": "chocolateChipCookie.jpg", 
+        "ingredients": [
+            "butter",
+            "sugar",
+            "vanilla",
+            "eggs",
+            "flour",
+            "baking soda",
+            "salt",
+            "chocolate chips"
+        ]    
+        
+    },
+    "chocolateCake":{
+        "name" : "Chocolate Cake",
+        "url": "chocolateCake.jpg", 
+        "ingredients": [
+            "sugar",
+            "eggs",
+            "flour",
+            "milk",
+            "cocoa powder",
+            "baking powder",
+            "baking soda",
+            "salt",
+            "oil",
+            "vanilla",
+            "boiling water"
+        ]          
+    },
+    "chocolateIceCream":{
+        "name" : "Chocolate Ice Cream",
+        "url": "chocolateIceCream.jpg", 
+        "ingredients": [
+            "heavy whipping cream",
+            "sweetened condensed milk",
+            "cocoa powder",
+            "vanilla extract"
+        ]          
+    }
+}

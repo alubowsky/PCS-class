@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .chooser{
+        text-align: center;
+    }
+    #recipeDiv{
+        text-align: center;
+        display: none;
+    }
+</style>
+<body>
+    <div class = "chooser">
+        <label>Choose a recipe:</label>
+        <input type="radio" name="recipe" value="chocolateChipCookies" id="chocolateChipCookies" > Chocolate Chip Cookies
+        <input type="radio" name="recipe" value="chocolateCake" id="chocolateCake"> Chocolate Cake
+        <input type="radio" name="recipe" value="chocolateIceCream" id="chocolateIceCream"> Chocolate Ice Cream
+        
+    </div>
+    <div id = "recipeDiv"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "recipees.js"></script>
+</body>
+</html>
