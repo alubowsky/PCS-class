@@ -1,5 +1,5 @@
-{
-    "chocolateChipCookies":{
+[
+    {
         "name" : "Chocolate Chip Cookies",
         "url": "chocolateChipCookie.jpg", 
         "ingredients": [
@@ -12,9 +12,8 @@
             "salt",
             "chocolate chips"
         ]    
-        
     },
-    "chocolateCake":{
+    {
         "name" : "Chocolate Cake",
         "url": "chocolateCake.jpg", 
         "ingredients": [
@@ -31,7 +30,7 @@
             "boiling water"
         ]          
     },
-    "chocolateIceCream":{
+    {
         "name" : "Chocolate Ice Cream",
         "url": "chocolateIceCream.jpg", 
         "ingredients": [
@@ -41,4 +40,6 @@
             "vanilla extract"
         ]          
     }
-}
+
+]
+    
