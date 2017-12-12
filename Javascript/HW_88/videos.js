@@ -18,20 +18,22 @@
 
     //function to add click handlers to play video
     function playVideo (videoData){
-        /*$("#" + videoData.title.replace(/\s+/g,'').trim()).click(function(){
-            $("#" + videoData.title.replace(/\s+/g,'').trim())[0].play();
-        });*/
         let video = $("#" + videoData.title.replace(/\s+/g,'').trim());
-        video.click(function(){
+        video.click(function(){  
             if(video[0].paused === false){
                 video[0].pause();
+                video.removeClass('playing');
             }
             else{
+                if($(".playing")[0]){
+                    $(".playing")[0].pause();
+                    $(".playing").removeClass('playing');
+                }
+                video.addClass('playing');
                 video[0].play();
             }
         });
         
     }
-
 }());
 
