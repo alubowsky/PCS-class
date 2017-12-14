@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .video p {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        #theVideo{
+            float: left;
+            width: 60%;
+            margin-top: -36px;
+        }
+
+        @media screen and (min-width: 600px) {
+            .video {
+                display: inline-block;
+                padding: 2px;
+            }
+
+            .video img {
+                width: 250px;
+            }
+        }
+
+        @font-face {
+            font-family: "Bitstream Vera Serif Bold";
+            src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id = "videoDiv">
+        <video id= 'theVideo' controls src = ""></video>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+    <script src = "videos.1.js"></script>
+</body>
+
+</html>
