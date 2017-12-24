@@ -24,14 +24,26 @@ $("#next").click(function(){
 $("#prev").click(function(){
     if(i>0){
         display(pics[--i].url, pics[i].title);
-        console.log(i);
     }
+});
+
+$("#slide").click(function(){
+    console.log("clicked");
+    let j = 0;
+    let stop = setInterval(function(){
+        if(j < pics.length){    
+            display(pics[j].url, pics[j].title);
+            j++;
+        }
+        else{
+            clearInterval(stop);
+        }
+    }, 1000);
 });
 
 function display (pic, caption){
     $("#theImage").attr("src", pic);
     $("#title").text(caption);
 }
-
 
 }());
