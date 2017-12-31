@@ -1,5 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
 require 'db.php';
 
 $json = file_get_contents("php://input");
