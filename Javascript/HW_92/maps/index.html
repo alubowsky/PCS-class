@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image: url("background.jpg");
+        }
+        .container, .row{
+            height: 100%;
+        }
+        .jumbotron{
+            box-shadow: 5px 10px 20px cornflowerblue;
+            background-color: #6495ed;
+        }
+         
+        .jumbotron h1{
+            color: rgba(0, 128, 0, 0.781);
+            font-weight: bolder;
+        }
+        #picDiv ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #picDiv li {
+            cursor: pointer;
+            border: 1px solid black;
+            margin: 4px;
+            height: 50px;
+            width: 340px;
+            overflow: hidden;
+        }
+
+        #picDiv li:hover {
+            color: lightgreen;
+        }
+
+        #picDiv li img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        .overflow{
+            overflow: auto;
+        };
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class = "jumbotron text-center">
+            <h1>Where In The World Are YOU?</h1>
+        </div>
+        <div class = "row">
+            <div class = "col-sm-4 bg-primary rounded overflow">
+                <div class="input-group mt-1">
+                        <input type = 'number' id="numResults" min="0" max="100" value="10" step = "10" class="btn btn-secondary">
+                        <input type="text" class="form-control" id = 'search' placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary"  id = 'go' type="button">Go!</button>
+                        </span>
+                </div>
+                <div id = "picDiv">
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="col-sm-8 map">
+                    <div id="map" class="rounded"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4Xp2PoMZ39fBByP6wVdcfOMKlMFLpFq8&libraries=drawing"></script>
+    <script src="maps.js"></script>
+</body>
+
+</html>
