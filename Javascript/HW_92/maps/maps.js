@@ -3,6 +3,10 @@
 (function () {
     "use strict";
 
+   
+
+
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           var pos = {
@@ -20,7 +24,6 @@
         map.setZoom(13);
         });
       } else {
-        // Browser doesn't support Geolocation
         console.log('error');
     }
 
@@ -88,6 +91,7 @@
               }
         });
         drawingManager.setMap(map);
+        
 
         google.maps.event.addListener(drawingManager, 'rectanglecomplete', function(drawing) {
             clearmap();
