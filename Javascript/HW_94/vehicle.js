@@ -20,14 +20,14 @@
 
 
     function Plane(color) {
-        Vehicle.call(this, color);
-        this.go = function (speed) {
-            this.speed = speed;
-            console.log('now flying at speed: ' + this.speed);
-        };
+        this.color = color;
     }
 
     Plane.prototype = Object.create(Vehicle.prototype);
+    Plane.prototype.go = function (speed) {
+        this.speed = speed;
+        console.log('now flying at speed: ' + this.speed);
+    };
 
     var plane = new Plane('green');
     
