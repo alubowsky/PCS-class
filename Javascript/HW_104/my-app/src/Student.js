@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Student.css';
 
 export default class Student extends Component {
 
@@ -13,7 +14,7 @@ export default class Student extends Component {
 
     render() {
         return (
-            <div>
+            <div className='Student'>
                 <h1>Im Student {this.name}</h1>
                 <h2>These are my grades: </h2>
                 <ul>
