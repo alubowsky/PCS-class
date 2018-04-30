@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Hello {{ name }}. Welcome to {{ title }}!.
+    <div *ngIf="birthday">You were born on {{birthday | date:'short'}}</div>
+  </h1>
+</div>
+<!--input [value]="title" (keyup)="updateTitle($event)" /-->
+<!--input #titleInput [value]="title" (keyup)="title=titleInput.value"/-->
+Title:
+<input [(ngModel)]="title" />
+<br/> Name:
+<input #theNameInput [(ngModel)]="name" required minlength="5" />
+<br/> {{ theNameInput.className }}
+<br/> Birthday:
+<input type="date" [(ngModel)]="birthday" />
